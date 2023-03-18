@@ -37,10 +37,10 @@ def registration(request):
     data ={
         "exist":is_exist
     }
-    if request.user.is_authenticated: # here we are giving condition that if a user do login then he/she will not go to the login page again. he must have to stay on home page.
-        return redirect("home")
-    else:
-        if request.method == "POST" and request.FILES['image']: # checking condition that user have subbmited form with an image
+    # if request.user.is_authenticated: # here we are giving condition that if a user do login then he/she will not go to the login page again. he must have to stay on home page.
+    #     return redirect("home")
+    # else:
+    if request.method == "POST" and request.FILES['image']: # checking condition that user have subbmited form with an image
             first_name = request.POST.get("first_name")
             email = request.POST.get("email")
             phone = request.POST.get("phone")
